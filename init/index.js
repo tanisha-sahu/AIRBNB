@@ -14,6 +14,11 @@ main()
 .catch(err=>console.log(err));
 
 async function ls(){
+    await list.deleteMany({});
+    datalist.data = datalist.data.map((obj)=> ({
+       ...obj,
+       owner : "66bc42fee87df6a7353622a9"
+    }));
    await list.insertMany(datalist.data);
    console.log("Data saved");
 }
